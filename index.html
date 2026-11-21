@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f8f5eb">
+  <title>Pixel Hati — Gesit &amp; Sylvi</title>
+  <link rel="icon" href="assets/heart.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <header class="bar"><div class="bar-inner">
+    <a class="brand" href="#permainan" aria-label="Pixel Hati, kembali ke permainan"><img src="assets/heart.png" alt="">Pixel Hati</a>
+    <span class="brand-names">Gesit &amp; Sylvi</span>
+    <nav aria-label="Navigasi utama"><button id="game-tab" class="nav-link active" aria-current="page"><img src="assets/pad.png" alt="">Permainan</button><button id="journal-tab" class="nav-link"><img src="assets/book.png" alt="">Jurnal</button></nav>
+    <button id="sound" class="utility" aria-pressed="false" aria-label="Aktifkan suara"><img src="assets/mute.png" alt=""><span>Suara mati</span></button>
+  </div></header>
+  <main id="permainan">
+    <div class="intro">
+      <div><div class="chapter-kicker"><span class="pixel-diamond"></span><span id="chapter-number">BAB 01 / 12</span></div>
+        <h1 id="title">Dikenalkan Puput</h1><p id="subtitle">Sebelum ada aku dan Sylvi, ada Puput.</p></div>
+      <div class="health"><span>Hati Gesit</span><div id="hearts" aria-label="3 dari 3 hati"><img src="assets/heart.png" alt=""><img src="assets/heart.png" alt=""><img src="assets/heart.png" alt=""></div></div>
+    </div>
+    <section class="game-frame" aria-label="Petualangan Gesit">
+      <div class="scene" id="scene">
+        <canvas id="world" width="560" height="212" tabindex="0" aria-label="Area permainan. Gerakkan Gesit dengan WASD atau panah. Tekan E untuk berinteraksi." aria-describedby="line"></canvas>
+        <div class="location"><img src="assets/pin.png" alt=""><span id="location">Taman</span></div>
+        <div class="water-dust" hidden aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="ending" id="ending" hidden>TAMAT</div>
+      </div>
+      <div class="dialogue" id="dialogue">
+        <img class="portrait" id="portrait" src="assets/gesit.png" alt="Potret Gesit">
+        <div class="speech"><div class="speaker-line"><strong id="speaker">Gesit</strong><span id="voice">Dalam hati</span></div>
+          <p id="line" aria-live="polite">Hampiri Puput di jalan setapak. Dia mau mengenalkanmu pada seseorang.</p>
+        </div>
+        <div class="controls">
+          <div class="dpad" aria-label="Tombol arah Gesit">
+            <button data-dir="up" aria-label="Jalan ke atas">▲</button>
+            <button data-dir="left" aria-label="Jalan ke kiri">◀</button>
+            <button data-dir="down" aria-label="Jalan ke bawah">▼</button>
+            <button data-dir="right" aria-label="Jalan ke kanan">▶</button>
+          </div>
+          <button class="advance" id="next">Sapa Puput</button>
+        </div>
+      </div>
+    </section>
+    <div class="under-frame"><span id="page-count"></span><span class="keyboard-hint"><kbd>WASD / ↑↓←→</kbd> jalan <kbd>E / Spasi</kbd> aksi</span><span id="save-status"><i></i> Progres tersimpan</span></div>
+    <section class="journey" aria-labelledby="journey-title">
+      <div class="section-head"><h2 id="journey-title"><img src="assets/book.png" alt="">Jejak Cerita</h2><span id="unlocked">1 dari 12 bab terbuka</span></div>
+      <div id="chapters" class="chapters"></div>
+    </section>
+  </main>
+  <dialog id="journal"><div class="modal-head"><h2><img src="assets/book.png" alt="">Jurnal Kita</h2><button class="close" id="close-journal" aria-label="Tutup jurnal">×</button></div><div class="journal-body"><p id="journal-intro"></p><div id="journal-list"></div></div></dialog>
+</body>
+</html>
